@@ -1,34 +1,18 @@
 import UserModel from "@/models/users.model";
 import dbConnect from "@/lib/dbConnect";
 
-// import { z } from "zod";
-// import { verifySchema } from "@/schemas/verifySchema";
-
-
-
-
-// const verifyCodeSchema = z.object({
-//     'verifyCode':verifySchema
-// })
-
 export async function POST(request : Request) {
-
 try {
     await dbConnect();
     const {username , code} = await request.json()
     const decodedUsername = decodeURIComponent(username)
-    // const codeParams = {
-    //     verifyCode: code
-    
-    // const verificationCode = verifyCodeSchema.safeParse(codeParams)
     const user = await UserModel.findOne({username : decodedUsername})
-
     if(!user){
-        return {
+        return Response.json({
             message: "User not found ",
             status: 400,
             success: false
-        }
+        })
     } 
     const isCodeValid = user.verifyCode === code
     const isCodeNotExpired = new Date(user.verifyCodeExpiry) > new Date
