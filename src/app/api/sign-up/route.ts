@@ -5,6 +5,7 @@ import UserModel from "@/models/users.model";
 import { sendVerificationEmail } from "@/helpers/sendVerificationEmail";
 import { NextResponse } from "next/server";
 
+
 export async function POST(request: Request): Promise<NextResponse>{
     await dbConnect();
     try {

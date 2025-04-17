@@ -8,9 +8,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   
-  "compilerOptions": {
-    "baseUrl": "src"
-  }
+ 
 };
 
 export default nextConfig;
