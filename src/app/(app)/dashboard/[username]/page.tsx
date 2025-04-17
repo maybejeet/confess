@@ -43,8 +43,9 @@ const Page = () => {
   const fetchAcceptMessage = useCallback(async ()=> {
     setIsSwitchLoading(true)
     try {
-      const response = await axios.get<ApiResponse>('/api/accept-message')
-      setValue('acceptMessage', response.data?.isAcceptingMessages)
+      const response = await axios.get('/api/accept-message')
+      console.log("Response of dashboard" , response);
+      setValue("acceptMessage", response.data?.isAcceptingMessages)
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>
       toast.error("Error",{
@@ -150,9 +151,9 @@ const Page = () => {
 
     <div className="flex flex-wrap mt-5 ">
       {messages.length > 0 ? 
-      (messages.map((message) => (
+      (messages.map((message, index) => (
         <MessageCard
-        key={message._id}
+        key={index}
         message={message}
         onMessageDelete={handleDeleteMessage}
         />

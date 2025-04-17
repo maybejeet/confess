@@ -25,14 +25,14 @@ export async function POST(request : Request){
         if(!updatedUser){
             return Response.json({
                 success:false,
-                message: "The updated user not found"
-            }, { status: 401 }) 
+                message: "The updated user not found",
+            status: 401 }) 
         }
         return Response.json({
             success:true,
             message: "User updated with accept message status",
-            updatedUser
-        }, { status: 201 })
+            updatedUser,
+            status: 201 })
 
 
     } catch (error) {
@@ -66,8 +66,8 @@ export async function GET(){
         return Response.json({
             success:true,
             message: "User found successfully",
-            isAcceptingMessages: foundUser.isAcceptingMessages
-        }, { status: 200 })
+            isAcceptingMessages: foundUser.isAcceptingMessages,
+            status: 200 })
 
 
     } catch (error) {
