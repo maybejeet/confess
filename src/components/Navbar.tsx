@@ -11,18 +11,13 @@ import Link from 'next/link';
 const Navbar = () => {
 
     const { data: session, status } = useSession()
-    const user = session?.user
-    const username = user?.username
-   
 
 return (
     <div className='min-h-24 w-full bg-gray-100 flex justify-between items-center  pr-[5%] pl-[5%]'>
         <div className='text-4xl font-bold font-sans'>
             <Link href={"/"}>Confessions</Link>
         </div>
-        <div>
-            <h1 className='text-4xl font-bold font-sans translate-x-[-50%]'>Hi, {username}</h1>
-        </div>
+        
         <div>
             {status === "authenticated" || session ?
             <>

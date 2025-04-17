@@ -1,6 +1,5 @@
 
 import dbConnect from "@/lib/dbConnect";
-//import { ApiResponse } from "@/types/ApiResponse";
 import bcrypt from "bcryptjs";
 import UserModel from "@/models/users.model";
 import { sendVerificationEmail } from "@/helpers/sendVerificationEmail";
@@ -66,7 +65,7 @@ export async function POST(request: Request): Promise<NextResponse>{
         
         
         //send verification email
-        const emailResponse =  await sendVerificationEmail(email , username , verifyCode)     
+        const emailResponse =  await sendVerificationEmail(email, username , verifyCode)     
         if(!emailResponse.success){
                 return NextResponse.json({
                     success: false,
