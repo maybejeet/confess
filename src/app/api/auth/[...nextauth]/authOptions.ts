@@ -12,6 +12,7 @@ import GoogleProvider from "next-auth/providers/google";
 
 
 
+
  export const authOptions : NextAuthOptions = {
 providers: [
     CredentialsProvider({
@@ -82,11 +83,12 @@ callbacks: {
             if (!dbUser) {
                 const baseUsername = user.name?.split(' ')[0].toLowerCase() || '';
                 let username = baseUsername;
-                let counter = 0;
+                //let counter = 0;
+                const randomUsernameSuffix = String(Math.random()*100)
 
                 while (await UserModel.findOne({ username })) {
-                    counter++;
-                    username = `${baseUsername}${counter}`;
+                    //counter++;
+                    username = `${baseUsername}${randomUsernameSuffix}`;
                     }
                 
                     try {
@@ -94,6 +96,7 @@ callbacks: {
                         email: user.email,
                         name: user.name || username,
                         username: username,
+                        password: '',
                         isVerified: true, // Auto-verify Google users
                         isAcceptingMessages: true,
                         // No password needed for OAuth users

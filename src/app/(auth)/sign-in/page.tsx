@@ -82,8 +82,8 @@ export default function Component() {
     useEffect(() => {
       if (status === "authenticated" && session?.user?.username) {
         // Redirect to the personalized dashboard
-        router.replace(`/dashboard/${session.user.username}`);
-        toast.success("Signed in with Google successfully");
+        router.replace(`/setPassword/${session.user.username}`);
+       // toast.success("Signed in with Google successfully");
       }
     }, [status, session, router]);
 
