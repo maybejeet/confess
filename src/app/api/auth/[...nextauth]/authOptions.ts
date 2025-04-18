@@ -80,7 +80,7 @@ callbacks: {
                 const baseUsername = user.name?.split(' ')[0].toLowerCase() || '';
                 let username = baseUsername;
                 //let counter = 0;
-                const randomUsernameSuffix = String(Math.random()*100)
+                const randomUsernameSuffix = String(Math.ceil(Math.random()*100))
                 const randomVerifyCode = String(Math.ceil(Math.random() * 1000000))
                 while (await UserModel.findOne({ username })) {
                     //counter++;
@@ -90,13 +90,11 @@ callbacks: {
                     try {
                         dbUser = await UserModel.create({
                         email: user.email,
-                        name: user.name || username,
                         username: username,
                         password: randomVerifyCode,
                         isVerified: true, // Auto-verify Google users
                         isAcceptingMessages: true,
                         verifyCode: randomVerifyCode
-                        // No password needed for OAuth users
                         });
                         console.log("Created new user from Google sign-in:", username);
                     } catch (createError) {

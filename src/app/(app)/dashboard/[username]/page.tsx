@@ -48,7 +48,7 @@ const Page = () => {
       setValue("acceptMessage", response.data?.isAcceptingMessages)
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>
-      toast.error("Error",{
+      toast("Oops!!",{
         description: axiosError.response?.data.message
       })
     } finally {

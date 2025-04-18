@@ -47,7 +47,7 @@ export default function Component() {
         toast.error(response.error)
         }  
         if(response?.url){
-        //  toast.success("Signed in successfully")
+        toast("Signed in successfully")
           router.replace(`/dashboard/${data.username}`)
         }      
         setIsSubmitting(false)
@@ -65,7 +65,7 @@ export default function Component() {
         if(response?.url){
           router.replace(`/setPassword/${session?.user.username}`)
         }
-       // toast.success("Signed in successfully")
+       toast("Signed in successfully")
       } catch (error) {
         console.error("Error signing in with Google", error);
         toast.error("Failed to sign in with Google");
@@ -86,7 +86,7 @@ export default function Component() {
       if (status === "authenticated" && session?.user?.username) {
         // Redirect to the personalized dashboard
         router.replace(`/setPassword/${session.user.username}`);
-       // toast.success("Signed in with Google successfully");
+       toast("Signed in with Google successfully");
       }
     }, [status, session, router]);
 

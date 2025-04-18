@@ -37,6 +37,7 @@ export const config = {
     '/sign-in',
     '/sign-up',
     '/verify/:path*',
-    '/dashboard/:path*'
+    '/dashboard/:path*',
+    '/setPassword/:path*'
   ]
 }

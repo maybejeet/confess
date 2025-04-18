@@ -35,14 +35,6 @@ export async function GET(){
                         $group: { _id: '$_id' , messages: { $push: '$messages' } }
                     }
                 ])
-
-                // if(!user || user.length == 0){
-                //     return Response.json({
-                //         success: false,
-                //         message: "User not found",
-                //         messages: []
-                //     }, { status: 404 }) 
-                // }
             
                 return Response.json({
                     success: true,
@@ -59,11 +51,10 @@ export async function GET(){
     }
         
     catch (error) {
-        console.log("Error getting the user messages" , error);
-        
+        console.log("Error getting the user messages" , error);       
         return Response.json({
             success:false,
-            message: "Error getting the user messages"
+            message: "No messages"
         }, { status: 501 }) 
     }
 }
