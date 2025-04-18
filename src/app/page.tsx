@@ -35,10 +35,10 @@ const features = [
   }
   return (
     <>
-    <div className="min-h-[80vh] flex justify-center items-center flex-col bg-gray-100">
-      <h1 className="text-7xl font-bold text-center ">Confess Your  CONFESSIONS</h1>
-      <h2 className="p-6 text-2xl text-center">A safe space to express yourself anonymously. <br />Connect, share, and discover stories from people around the world.</h2>
-      <Button onClick={handelClick}> <MessageCircle/> Start Confessing </Button>
+    <div className="sm:min-h-[80vh] min-h-[80vh] min-w-screen flex justify-center items-center flex-col bg-gray-100">
+      <h1 className="sm:text-7xl text-5xl font-bold text-center ">Confess Your  CONFESSIONS</h1>
+      <h2 className="sm:p-6 sm:text-2xl sm:text-center hidden sm:block">A safe space to express yourself anonymously. <br />Connect, share, and discover stories from people around the world.</h2>
+      <Button onClick={handelClick} className="mt-6"> <MessageCircle/> Start Confessing </Button>
     </div>
 
     <div className="py-16 bg-gray-50">

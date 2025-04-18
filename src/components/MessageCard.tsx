@@ -48,14 +48,14 @@ const MessageCard = ({message , onMessageDelete} : MessageCardProps ) => {
 
   return (
     <div className="m-3">
-    <Card className="w-[560px] flex ">
+    <Card className="w-[400px] sm:w-[560px] flex ">
     <CardHeader>
       <CardTitle><p>{message.content}</p></CardTitle>
       <CardDescription> <p>{dayjs(message.createdAt).format('DD MMM YYYY, h:mm A')}</p></CardDescription>
     </CardHeader>
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="destructive"><X/></Button>
+        <Button variant="destructive" className="mr-2"><X/></Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
