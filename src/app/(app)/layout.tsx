@@ -18,14 +18,8 @@ export default function RootLayout({
   return (
 
       <>
-      {/* <body */}
-        {/* className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > */}
         <Navbar/>
-        {/* <MessageCard /> */}
         {children}
-        
-      {/* </body> */}
       </>
         
 
