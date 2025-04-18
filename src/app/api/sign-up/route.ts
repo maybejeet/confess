@@ -14,11 +14,7 @@ export async function POST(request: Request): Promise<NextResponse>{
         //check if that username already exists and also if that isVerified
         const existingUserVerifiedByUsername = await UserModel.findOne({username, isVerified:true})
         if(existingUserVerifiedByUsername){
-            // return {
-            //     success: false,
-            //     message: "Username already taken",
-            //     status: 400
-            // }
+            
             return NextResponse.json({
                 success: false,
                 message: "Username already taken",
@@ -29,11 +25,6 @@ export async function POST(request: Request): Promise<NextResponse>{
         const verifyCode = Math.floor(100000 + Math.random()*900000).toString()
         if(existingUserByEmail){
             if(existingUserByEmail.isVerified){
-                // return {
-                //     success: false,
-                //     message: "This email already exists",
-                //     status: 500
-                // }
                 return NextResponse.json({
                     success: false,
                     message: "This email already exists",

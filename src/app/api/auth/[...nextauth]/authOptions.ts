@@ -9,10 +9,6 @@ import UserModel from "@/models/users.model";
 import GoogleProvider from "next-auth/providers/google";
 
 
-
-
-
-
  export const authOptions : NextAuthOptions = {
 providers: [
     CredentialsProvider({
@@ -85,12 +81,12 @@ callbacks: {
                 let username = baseUsername;
                 //let counter = 0;
                 const randomUsernameSuffix = String(Math.random()*100)
-
+                const randomVerifyCode = String(Math.random() * 1000000)
                 while (await UserModel.findOne({ username })) {
                     //counter++;
                     username = `${baseUsername}${randomUsernameSuffix}`;
                     }
-                
+
                     try {
                         dbUser = await UserModel.create({
                         email: user.email,
@@ -99,6 +95,7 @@ callbacks: {
                         password: '',
                         isVerified: true, // Auto-verify Google users
                         isAcceptingMessages: true,
+                        verifyCode: randomVerifyCode
                         // No password needed for OAuth users
                         });
                         console.log("Created new user from Google sign-in:", username);
