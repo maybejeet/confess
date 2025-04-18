@@ -60,7 +60,7 @@ GoogleProvider({
   }),
 ], 
 callbacks: {
-    async signIn({ user, account , profile}) {
+    async signIn({ user, account }) {
         // Only handle Google sign-ins here
         if (account?.provider === "google") {
         await dbConnect();
@@ -71,11 +71,9 @@ callbacks: {
             return false;
         }
         
-        console.log("Google profile:", profile);
-        console.log("Google user:", user);
+        // console.log("Google profile:", profile);
+        // console.log("Google user:", user);
             let dbUser = await UserModel.findOne({ email: user.email });
-            
-
             if (!dbUser) {
                 const baseUsername = user.name?.split(' ')[0].toLowerCase() || '';
                 let username = baseUsername;
@@ -109,9 +107,9 @@ callbacks: {
             return false;
         }
         }
-      
+
         return true; // Allow credential sign-ins to proceed normally
-      },
+},
     async jwt({ token , user , account}) {
         if (user){
             if (account?.provider === "google") {

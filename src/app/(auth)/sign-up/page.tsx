@@ -66,7 +66,7 @@ function SignupPage(){
       toast.success("Signed up successfully", {
         description: response.data.message,
       })
-      router.replace(`/verify/${username}`)
+      router.replace(`/sign-in`)
       setIsSubmitting(false)
     } catch (error) {
       console.error("Error in user signup")

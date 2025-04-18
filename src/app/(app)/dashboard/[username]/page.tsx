@@ -68,9 +68,8 @@ const Page = () => {
      }
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>
-      toast.error("Error",{
-        description: axiosError.response?.data.message
-      })
+      console.log(axiosError);
+      
     } finally {
       setIsLoading(false)
       setIsSwitchLoading(false)
