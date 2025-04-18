@@ -74,14 +74,14 @@ export default function Component() {
       }
     }
 
-    const copyUsername = () => {
-      navigator.clipboard.writeText("jeet")
-      toast("Username copied to clipboard")
-    }
-    const copyPassword = () => {
-      navigator.clipboard.writeText("111111")
-      toast("Password copied to clipboard")
-    }
+    // const copyUsername = () => {
+    //   navigator.clipboard.writeText("jeet")
+    //   toast("Username copied to clipboard")
+    // }
+    // const copyPassword = () => {
+    //   navigator.clipboard.writeText("111111")
+    //   toast("Password copied to clipboard")
+    // }
     useEffect(() => {
       if (status === "authenticated" && session?.user?.username) {
         // Redirect to the personalized dashboard
@@ -184,11 +184,11 @@ export default function Component() {
           </p>
         </div>
       </div>
-      <div>
+      {/* <div>
         <p className="text-red-500">Test credentials <br /> (click to copy)</p>
         <Button className="m-2" onClick={copyUsername}>Username</Button>
         <Button className="m-2" onClick={copyPassword}>Password</Button>
-      </div>
+      </div> */}
     </div>
   );
 }
