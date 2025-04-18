@@ -21,7 +21,7 @@ const messageSchema : Schema<Message> = new Schema({
 export interface User extends Document{
     username: string
     email: string
-    password: string
+    password?: string
     verifyCode: string
     verifyCodeExpiry?: Date
     isAcceptingMessages: boolean
