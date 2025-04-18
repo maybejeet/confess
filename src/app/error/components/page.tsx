@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export default function ErrorPage() {
+export default function ErrorPageClient() {
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
 
