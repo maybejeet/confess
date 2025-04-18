@@ -48,7 +48,7 @@ const MessageCard = ({message , onMessageDelete} : MessageCardProps ) => {
 
   return (
     <div className="m-3">
-    <Card className="w-[400px] sm:w-[560px] flex ">
+    <Card className="w-[100%] sm:w-[560px] flex ">
     <CardHeader>
       <CardTitle><p>{message.content}</p></CardTitle>
       <CardDescription> <p>{dayjs(message.createdAt).format('DD MMM YYYY, h:mm A')}</p></CardDescription>

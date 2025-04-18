@@ -13,12 +13,12 @@ const Navbar = () => {
     const { data: session, status } = useSession()
 
 return (
-    <div className='min-h-24 w-full bg-gray-100 flex justify-between items-center  pr-[5%] pl-[5%]'>
-        <div className='text-4xl font-bold font-sans'>
+    <div className='min-h-24 min-w-[100vw] bg-gray-100 flex justify-between items-center  '>
+        <div className='sm:text-4xl text-2xl font-bold font-sans p-4'>
             <Link href={"/"}>Confessions</Link>
         </div>
         
-        <div>
+        <div className='p-4'>
             {status === "authenticated" || session ?
             <>
             <Link href={"/sign-in"}>

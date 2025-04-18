@@ -149,7 +149,7 @@ const Page = () => {
       {isLoading ? <Loader2 className="animate-spin"/> : <RefreshCcw/>}
     </Button>
 
-    <div className="flex flex-wrap mt-5 ">
+    <div className="sm:flex sm:flex-wrap mt-5  ">
       {messages.length > 0 ? 
       (messages.map((message, index) => (
         <MessageCard
