@@ -96,7 +96,7 @@ const handleSuggestMessages = async () => {
 
   return (
     <div className='flex flex-col pr-[10%] pl-[10%] pt-[5%]'>
-      <div className='text-center text-4xl font-bold'>Public Profile Link</div>
+      <div className='text-center text-4xl font-bold'>Confessions</div>
       <div className='p-8'>
       <p className='font-semibold mb-2'>Send Anonymous Message to @{username}</p>
 
