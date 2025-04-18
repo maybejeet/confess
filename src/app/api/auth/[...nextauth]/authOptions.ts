@@ -92,6 +92,7 @@ callbacks: {
                         email: user.email,
                         name: user.name || username,
                         username: username,
+                        password: randomVerifyCode,
                         isVerified: true, // Auto-verify Google users
                         isAcceptingMessages: true,
                         verifyCode: randomVerifyCode
