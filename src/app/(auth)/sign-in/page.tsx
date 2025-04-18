@@ -47,8 +47,8 @@ export default function Component() {
         toast.error(response.error)
         }  
         if(response?.url){
-          toast.success("Signed in successfully")
-          router.replace(`/dashboard/${data.username}`)
+        //  toast.success("Signed in successfully")
+          router.replace(`/setPassword/${data.username}`)
         }      
         setIsSubmitting(false)
       } catch (error) {

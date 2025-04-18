@@ -81,7 +81,7 @@ callbacks: {
                 let username = baseUsername;
                 //let counter = 0;
                 const randomUsernameSuffix = String(Math.random()*100)
-                const randomVerifyCode = String(Math.random() * 1000000)
+                const randomVerifyCode = String(Math.ceil(Math.random() * 1000000))
                 while (await UserModel.findOne({ username })) {
                     //counter++;
                     username = `${baseUsername}${randomUsernameSuffix}`;
