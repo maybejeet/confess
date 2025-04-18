@@ -48,7 +48,7 @@ export default function Component() {
         }  
         if(response?.url){
         //  toast.success("Signed in successfully")
-          router.replace(`/setPassword/${data.username}`)
+          router.replace(`/dashboard/${data.username}`)
         }      
         setIsSubmitting(false)
       } catch (error) {
@@ -62,7 +62,10 @@ export default function Component() {
         const response = await signIn("google", { redirect: false });
         console.log("Response of google" , response);
         // The redirect will be handled by NextAuth
-        toast.success("Signed in successfully")
+        if(response?.url){
+          router.replace(`/setPassword/${session?.user.username}`)
+        }
+       // toast.success("Signed in successfully")
       } catch (error) {
         console.error("Error signing in with Google", error);
         toast.error("Failed to sign in with Google");
