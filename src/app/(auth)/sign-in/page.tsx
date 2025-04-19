@@ -65,7 +65,7 @@ export default function Component() {
         if(response?.url){
           router.replace(`/setPassword/${session?.user.username}`)
         }
-       toast("Signed in successfully")
+      // toast("Signed in successfully")
       } catch (error) {
         console.error("Error signing in with Google", error);
         toast.error("Failed to sign in with Google");
@@ -85,7 +85,7 @@ export default function Component() {
     useEffect(() => {
       if (status === "authenticated" && session?.user?.username) {
         // Redirect to the personalized dashboard
-        router.replace(`/setPassword/${session.user.username}`);
+        router.replace(`/dashboard/${session.user.username}`);
        toast("Signed in with Google successfully");
       }
     }, [status, session, router]);
@@ -99,7 +99,7 @@ export default function Component() {
       );
     }
   return (
-    <div className="min-h-screen border-2 border-black flex text-center justify-center items-center bg-gray-100 flex-col">
+    <div className="min-h-screen  flex text-center justify-center items-center bg-gray-100 flex-col">
       <div className="border-1 rounded-2xl border-black p-7">
         <h1 className="sm:text-6xl text-4xl font-bold font-sans">Confess Your <br /> Confession</h1>
         <p className="sm:mt-4 sm:mb-7 mt-2 mb-4 sm:text-xl text-[1rem]">Sign in to start your anonymous adventure</p>

@@ -42,7 +42,7 @@ function VerifyPage() {
     }
 
     return (
-        <div className="min-h-screen border-2 border-black flex text-center justify-center items-center bg-gray-100"> 
+        <div className="min-h-screen  flex text-center justify-center items-center bg-gray-100"> 
         <div className="border-1 rounded-2xl border-black p-7">
         <h1 className="sm:text-6xl text-4xl font-bold font-sans">Verify Your <br /> Email</h1>
         <p className="sm:mt-4 sm:mb-7 mt-2 mb-4 sm:text-xl text-[1rem]"> <span className="font-semibold">@{params.username}</span> , enter the veification code sent to your email.</p>
