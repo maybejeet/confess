@@ -173,7 +173,7 @@ function SignupPage(){
               <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
               </>
-            ) : ("SignUp")
+            ) : ("SignUp with Credentials")
           }
         </Button>
       </form>
